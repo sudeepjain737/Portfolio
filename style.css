@@ -1,0 +1,264 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: Arial,
+sans-serif;
+background: rgb(17 24 39);
+color: #333;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(31 41 55);
+  padding: 20px 20px;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  border-radius: 50px;
+  z-index: 1000;
+}
+
+/* Default nav links (desktop) */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+.nav-links a:hover {
+  color: #1abc9c;
+}
+
+/* Hamburger icon (hidden on desktop) */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive styles for small screens */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .menu-toggle {
+    display: block;
+    align-self: flex-end;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    display: none; /* hidden by default */
+    margin-top: 10px;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .nav-links.show {
+    display: flex; /* show when toggled */
+  }
+}
+
+
+/* Hero */
+.hero {
+  margin-top: 120px;
+  text-align: center;
+  padding: 80px 20px;
+  color: white;
+}
+.hero h1 span { color: #1abc9c; }
+.btn {
+  display: inline-block; margin-top: 20px; padding: 10px 20px;
+  background: #1abc9c; color: white; border-radius: 20px; text-decoration: none;
+}
+.btn:hover { background: #16a085; }
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;      /* makes it round */
+  object-fit: cover;       /* keeps aspect ratio */
+  border: 4px solid #1abc9c; /* nice border */
+  margin-bottom: 20px;     /* space below image */
+}
+
+
+/* Common card style */
+.inner-card,
+.project-card {
+  background: #ecf0f1;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.inner-card:hover,
+.project-card:hover {
+  transform: scale(1.07); /* zooms in slightly */
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* deeper shadow */
+}
+
+
+#about p {
+  margin-bottom: 15px;   /* spacing between lines */
+  line-height: 1.6;      /* improves readability */
+  text-align: justify;   /* optional: clean alignment */
+}
+
+
+/* Content Sections (cards) */
+.section {
+  width: 75%; margin: 40px auto; padding: 40px;
+  background: rgb(31 41 55); border-radius: 20px;
+  color: white;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+.section h2 { text-align: center; margin-bottom: 30px; color: white; }
+
+/* Inner cards */
+.card-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;}
+.inner-card {
+  background: rgb(17 24 39); padding: 20px; border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 250px; text-align: center;
+}
+.inner-card h3 { margin-bottom: 10px; color: #1abc9c; }
+
+/* Contact section (full width) */
+.contact-section {
+  text-align: center;
+  width: 75%; margin: 40px auto; padding: 40px;
+  background: rgb(31 41 55); border-radius: 20px;
+  color: white;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+.contact-section h2 {
+  margin-bottom: 20px;
+}
+.contact-section form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+}
+.contact-section input,
+.contact-section textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: rgb(17 24 39);
+}
+.contact-section textarea { min-height: 120px; resize: vertical;}
+.contact-section button {
+  background: #1abc9c;
+  border: none;
+  padding: 14px;
+  color: white;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.contact-section button:hover { background: #16a085; }
+
+/* Footer */
+footer { text-align: center; padding: 15px; background: #1abc9c; color: white; }
+footer a { color: #fff; text-decoration: underline; }
+
+/* Competitive Profiles */
+.profiles {
+  width: 75%;
+  margin: 40px auto;
+  padding: 30px;
+  background: rgb(31 41 55);
+  border-radius: 20px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.profiles h2 {
+  margin-bottom: 20px;
+  color: white;
+}
+
+.profile-links {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.profile-links a img {
+  width: 80px;         /* fixed width */
+  height: 80px;        /* fixed height */
+  object-fit: contain; /* keep aspect ratio inside box */
+  background: white;   /* keep a clean background */
+  border-radius: 10px; /* small rounded edges */
+  padding: 8px;        /* spacing inside */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-links a img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+
+/* Project Cards */
+.project-card {
+  text-align: left;
+  width: 300px;
+}
+
+.project-card h3 {
+  margin-bottom: 10px;
+  color: #1abc9c;
+}
+
+.project-card p {
+  margin: 6px 0;
+  font-size: 0.95rem;
+  color: white;
+}
+
+.small-btn {
+  display: inline-block;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  border-radius: 10px;
+  margin-top: 10px;
+}
